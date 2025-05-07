@@ -1,5 +1,6 @@
 provider "datadog" {
 #Org specific site/keys here
+#Passing variables here instead of via tfvars
   api_key = var.datadog_api_key
   app_key = var.datadog_app_key
 }
