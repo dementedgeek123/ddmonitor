@@ -1,8 +1,9 @@
 provider "datadog" {
+#Org specific site/keys here
   api_key = var.datadog_api_key
   app_key = var.datadog_app_key
 }
-
+#measures cpu on any host
 resource "datadog_monitor" "high_cpu" {
   name    = "CPU Usage Alert"
   type    = "metric alert"
@@ -28,7 +29,7 @@ resource "datadog_monitor" "high_cpu" {
 
   notify_no_data = true
 }
-
+#high severity monitor
 resource "datadog_monitor" "gateway_unavbl_504_errors" {
   name    = "High number of 504 Gateway Timeout errors on {{host.name}}"
   type    = "log alert"
