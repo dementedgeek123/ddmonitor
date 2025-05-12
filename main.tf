@@ -1,8 +1,8 @@
 provider "datadog" {
 #Org specific site/keys here
 #Passing variables here instead of via tfvars
-  api_key = var.datadog_api_key
-  app_key = var.datadog_app_key
+ export api_key = var.datadog_api_key
+ export app_key = var.datadog_app_key
 }
 #measures cpu on any host
 resource "datadog_monitor" "high_cpu" {
